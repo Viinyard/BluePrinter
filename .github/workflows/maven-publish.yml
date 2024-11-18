@@ -23,7 +23,7 @@ jobs:
     - name: Publish to GitHub Packages Apache Maven
       run: mvn --batch-mode deploy
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.ACTION_GITHUB_TOKEN }}
 
   upload-asset:
     needs: publish
@@ -37,7 +37,7 @@ jobs:
 
       - name: Build project
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.ACTION_GITHUB_TOKEN }}
         run: mvn clean package -DskipTests
 
       - name: Extract Maven Project Version
@@ -47,7 +47,7 @@ jobs:
       - name: Upload Release Asset (ZIP)
         uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.ACTION_GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
           asset_path: velocity-blueprint-shell/target/velocity-blueprint-shell-${{ env.VERSION }}-assembly.zip
@@ -57,7 +57,7 @@ jobs:
       - name: Upload Release Asset (TAR.GZ)
         uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.ACTION_GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
           asset_path: velocity-blueprint-shell/target/velocity-blueprint-shell-${{ env.VERSION }}-assembly.tar.gz
