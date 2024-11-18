@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: velocity-blueprint-runner
+  main:
+    banner-mode: off
+  shell:
+    interactive:
+      enabled: true
+    script:
+      enabled: true
+
+velocity-blueprint:
+  environment:
+    workspaceDirectory: VelocityBlueprint
+    modelDirectory: models
+    templateDirectory: templates

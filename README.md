@@ -1,0 +1,2 @@
+# BluePrinter
+BluePrinter is a template engine based on Apache Velocity, designed to create files from templates. Allow users to make choices from options or ask for necessary information for executing a file creation directive.  BluePrinter can be extended with various plugins, enhancing its functionality and flexibility.
