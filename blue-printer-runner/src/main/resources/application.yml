@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: blue-printer-cli
+  main:
+    banner-mode: off
+
+blue-printer:
+  environment:
+    workspaceDirectory: BluePrinter
+    modelDirectory: models
+    templateDirectory: templates

@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: blue-printer-runner
+  main:
+    banner-mode: off
+  shell:
+    interactive:
+      enabled: true
+    script:
+      enabled: true
+
+blue-printer:
+  environment:
+    workspaceDirectory: BluePrinter
+    modelDirectory: models
+    templateDirectory: templates

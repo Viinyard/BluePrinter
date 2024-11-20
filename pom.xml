@@ -2,7 +2,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
-  <groupId>pro.vinyard.vb</groupId>
+  <groupId>dev.vinyard.bp</groupId>
   <artifactId>blue-printer</artifactId>
   <version>1.2.0</version>
   <packaging>pom</packaging>
@@ -10,10 +10,10 @@
   <url>http://maven.apache.org</url>
 
   <modules>
-    <module>velocity-blueprint-engine</module>
-    <module>velocity-blueprint-shell</module>
-    <module>velocity-blueprint-plugins</module>
-    <module>velocity-blueprint-runner</module>
+    <module>blue-printer-engine</module>
+    <module>blue-printer-shell</module>
+    <module>blue-printer-plugins</module>
+    <module>blue-printer-runner</module>
   </modules>
 
   <properties>
