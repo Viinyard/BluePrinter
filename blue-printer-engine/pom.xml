@@ -4,14 +4,14 @@
     <parent>
         <groupId>dev.vinyard.bp</groupId>
         <artifactId>blue-printer</artifactId>
-        <version>1.2.0</version>
+        <version>1.3.0</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>dev.vinyard.bp.engine</groupId>
     <artifactId>blue-printer-engine</artifactId>
     <packaging>jar</packaging>
-    <version>1.2.0</version>
+    <version>1.3.0</version>
     <name>blue-printer-engine</name>
     <description>BluePrinter is a spring shell application for a Velicity templates engine</description>
 
