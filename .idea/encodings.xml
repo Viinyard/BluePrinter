@@ -1,26 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/blue-printer-engine/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/blue-printer-engine/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/blue-printer-plugins/advent-of-code/aoc-scrapper/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/blue-printer-plugins/advent-of-code/aoc-scrapper/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/blue-printer-plugins/advent-of-code/aoc-solution/aoc-solution-api/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/blue-printer-plugins/advent-of-code/aoc-solution/aoc-solution-api/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/blue-printer-plugins/advent-of-code/aoc-solution/aoc-solution-plugin/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/blue-printer-plugins/advent-of-code/aoc-solution/aoc-solution-plugin/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/blue-printer-plugins/advent-of-code/aoc-solution/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/blue-printer-plugins/advent-of-code/aoc-solution/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/blue-printer-plugins/advent-of-code/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/blue-printer-plugins/advent-of-code/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/blue-printer-plugins/blue-printer-plugins-api/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/blue-printer-plugins/blue-printer-plugins-api/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/blue-printer-plugins/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/blue-printer-plugins/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/blue-printer-runner/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/blue-printer-runner/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/blue-printer-shell/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/blue-printer-shell/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blue-printer-maven-plugin/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blue-printer-maven-plugin/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blueprinter-plugins-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blueprinter-plugins-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blueprinter-plugins/advent-of-code/aoc-scrapper/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blueprinter-plugins/advent-of-code/aoc-scrapper/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blueprinter-plugins/advent-of-code/aoc-solution/aoc-solution-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blueprinter-plugins/advent-of-code/aoc-solution/aoc-solution-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blueprinter-plugins/advent-of-code/aoc-solution/aoc-solution-plugin/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blueprinter-plugins/advent-of-code/aoc-solution/aoc-solution-plugin/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blueprinter-plugins/advent-of-code/aoc-solution/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blueprinter-plugins/advent-of-code/aoc-solution/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blueprinter-plugins/advent-of-code/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blueprinter-plugins/advent-of-code/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blueprinter-plugins/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blueprinter-plugins/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blueprinter-runner/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blueprinter-runner/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blueprinter-shell/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blueprinter-shell/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blueprinter-spring-boot-autoconfigure/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blueprinter-spring-boot-autoconfigure/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blueprinter-spring-boot-core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blueprinter-spring-boot-core/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blueprinter-spring-boot-starter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blueprinter-spring-boot-starter/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/untitled/src/main/java" charset="UTF-8" />

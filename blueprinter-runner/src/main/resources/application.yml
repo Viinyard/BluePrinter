@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: blueprinter-cli
+  main:
+    banner-mode: off

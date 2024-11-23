@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: blueprinter-runner
+  main:
+    banner-mode: off
+  shell:
+    interactive:
+      enabled: true
+    script:
+      enabled: true

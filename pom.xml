@@ -1,60 +1,96 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>dev.vinyard.bp</groupId>
-  <artifactId>blue-printer</artifactId>
-  <version>1.4.0</version>
-  <packaging>pom</packaging>
-  <name>BluePrinter</name>
-  <url>http://maven.apache.org</url>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>dev.vinyard.bp</groupId>
+    <artifactId>blueprinter</artifactId>
+    <version>1.7.0</version>
+    <packaging>pom</packaging>
+    <name>BluePrinter</name>
+    <url>http://maven.apache.org</url>
 
-  <modules>
-    <module>blue-printer-engine</module>
-    <module>blue-printer-shell</module>
-    <module>blue-printer-plugins</module>
-    <module>blue-printer-runner</module>
-  </modules>
+    <modules>
+        <module>blueprinter-spring-boot-core</module>
+        <module>blueprinter-shell</module>
+        <module>blueprinter-plugins-api</module>
+        <module>blueprinter-runner</module>
+        <module>blueprinter-spring-boot-autoconfigure</module>
+        <module>blueprinter-spring-boot-starter</module>
+    </modules>
 
-  <properties>
-    <java.version>21</java.version>
-    <exec-maven-plugin.version>3.5.0</exec-maven-plugin.version>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <spring-boot-dependencies.version>3.3.3</spring-boot-dependencies.version>
-    <spring-shell-dependencies.version>3.3.3</spring-shell-dependencies.version>
-    <lombok.version>1.18.32</lombok.version>
-    <jaxb-api.version>2.3.1</jaxb-api.version>
-    <velocity-engine-core.version>2.3</velocity-engine-core.version>
-    <velocity-tools-generic.version>3.1</velocity-tools-generic.version>
-    <pf4j.version>3.12.1</pf4j.version>
-    <spring-boot-maven-plugin.version>3.3.3</spring-boot-maven-plugin.version>
-    <jsoup.version>1.17.1</jsoup.version>
-    <assertj-core.version>3.24.2</assertj-core.version>
-    <junit-jupiter-params.version>5.10.1</junit-jupiter-params.version>
-    <antlr4-runtime.version>4.13.1</antlr4-runtime.version>
-    <antlr4-maven-plugin.version>4.13.1</antlr4-maven-plugin.version>
-    <maven-assembly-plugin.version>3.6.0</maven-assembly-plugin.version>
-    <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
-    <commons-io.version>2.11.0</commons-io.version>
-    <okhttp.version>4.12.0</okhttp.version>
-    <maven-antrun-plugin.version>3.1.0</maven-antrun-plugin.version>
-  </properties>
+    <properties>
+        <java.version>21</java.version>
+        <exec-maven-plugin.version>3.5.0</exec-maven-plugin.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring-boot-dependencies.version>3.3.3</spring-boot-dependencies.version>
+        <spring-shell-dependencies.version>3.3.3</spring-shell-dependencies.version>
+        <lombok.version>1.18.32</lombok.version>
+        <jaxb-api.version>2.3.1</jaxb-api.version>
+        <velocity-engine-core.version>2.3</velocity-engine-core.version>
+        <velocity-tools-generic.version>3.1</velocity-tools-generic.version>
+        <pf4j.version>3.12.1</pf4j.version>
+        <spring-boot-maven-plugin.version>3.3.3</spring-boot-maven-plugin.version>
+        <jsoup.version>1.17.1</jsoup.version>
+        <assertj-core.version>3.24.2</assertj-core.version>
+        <junit-jupiter-params.version>5.10.1</junit-jupiter-params.version>
+        <antlr4-runtime.version>4.13.1</antlr4-runtime.version>
+        <antlr4-maven-plugin.version>4.13.1</antlr4-maven-plugin.version>
+        <maven-assembly-plugin.version>3.6.0</maven-assembly-plugin.version>
+        <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
+        <commons-io.version>2.18.0</commons-io.version>
+        <okhttp.version>4.12.0</okhttp.version>
+        <maven-antrun-plugin.version>3.1.0</maven-antrun-plugin.version>
+        <jline-terminal-jansi.version>3.26.3</jline-terminal-jansi.version>
 
-  <repositories>
-    <repository>
-      <id>github</id>
-      <url>https://maven.pkg.github.com/viinyard/maven-repo</url>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
+        <!-- https://eclipse-ee4j.github.io/jaxb-ri/ -->
+        <jakarta.xml.bind-api.version>4.0.2</jakarta.xml.bind-api.version>
+        <jaxb-ri.version>4.0.5</jaxb-ri.version>
+    </properties>
 
-  <distributionManagement>
-    <repository>
-      <id>github</id>
-      <name>GitHub Viinyard Apache Maven Packages</name>
-      <url>https://maven.pkg.github.com/viinyard/maven-repo</url>
-    </repository>
-  </distributionManagement>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <type>pom</type>
+                <version>${spring-boot-dependencies.version}</version>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                    </configuration>
+                    <version>${maven-compiler-plugin.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/viinyard/maven-repo</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Viinyard Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/viinyard/maven-repo</url>
+        </repository>
+    </distributionManagement>
 </project>

@@ -90,7 +90,7 @@ Or you can use the BluePrinter API to integrate it with your applications and ex
 
 3. Run the application:
     ```sh
-    java -jar blue-printer-shell/target/blue-printer-shell-1.1.5.jar
+    java -jar blueprinter-shell/target/blueprinter-shell-1.1.5.jar
     ```
 
 </details>

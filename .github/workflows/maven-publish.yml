@@ -50,8 +50,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.ACTION_GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: blue-printer-shell/target/blue-printer-shell-${{ env.VERSION }}-assembly.zip
-          asset_name: blue-printer-shell-${{ env.VERSION }}-assembly.zip
+          asset_path: blueprinter-shell/target/blueprinter-shell-${{ env.VERSION }}-assembly.zip
+          asset_name: blueprinter-shell-${{ env.VERSION }}-assembly.zip
           asset_content_type: application/zip
 
       - name: Upload Release Asset (TAR.GZ)
@@ -60,6 +60,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.ACTION_GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: blue-printer-shell/target/blue-printer-shell-${{ env.VERSION }}-assembly.tar.gz
-          asset_name: blue-printer-shell-${{ env.VERSION }}-assembly.tar.gz
+          asset_path: blueprinter-shell/target/blueprinter-shell-${{ env.VERSION }}-assembly.tar.gz
+          asset_name: blueprinter-shell-${{ env.VERSION }}-assembly.tar.gz
           asset_content_type: application/gzip
