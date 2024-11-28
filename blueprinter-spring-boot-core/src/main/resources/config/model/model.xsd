@@ -14,6 +14,7 @@
 
     <xs:complexType name="modelType">
         <xs:sequence>
+            <xs:element name="setup" type="xs:string" minOccurs="0"/>
             <xs:element name="properties" type="propertiesType" minOccurs="0">
                 <xs:unique name="uniqueKeyProperty">
                     <xs:selector xpath="property"/>
@@ -76,6 +77,7 @@
                     </xs:unique>
                 </xs:element>
                 <xs:element name="stringInput" type="stringInputType"/>
+                <xs:element name="setupInput" type="setupInputType"/>
             </xs:choice>
         </xs:sequence>
     </xs:complexType>
@@ -108,14 +110,22 @@
 
     <xs:complexType name="stringInputType">
         <xs:sequence>
-            <xs:element name="defaultValue" type="defaultValueType" minOccurs="0"/>
+            <xs:element name="defaultValue" type="contentValueType" minOccurs="0"/>
         </xs:sequence>
         <xs:attribute name="value" type="xs:string" use="required"/>
         <xs:attribute name="order" type="xs:integer" default="0"/>
         <xs:attribute name="masked" type="xs:boolean" default="false"/>
     </xs:complexType>
 
-    <xs:complexType name="defaultValueType">
+    <xs:complexType name="setupInputType">
+        <xs:sequence>
+            <xs:element name="setup" type="contentValueType" minOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute name="value" type="xs:string" use="required"/>
+        <xs:attribute name="order" type="xs:integer" default="0"/>
+    </xs:complexType>
+
+    <xs:complexType name="contentValueType">
         <xs:simpleContent>
             <xs:extension base="xs:string"/>
         </xs:simpleContent>

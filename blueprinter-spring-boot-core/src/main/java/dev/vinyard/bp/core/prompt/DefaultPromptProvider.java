@@ -29,6 +29,7 @@ public class DefaultPromptProvider implements PromptProvider {
                     this.singleSelect(e.getValueList().stream().map(v -> PromptSelectorItem.of(templated.apply(v.getKey()), templated.apply(v.getContent()), v.isEnabled(), v.isSelected())).toList(), e.getValue());
             case StringInput e ->
                     this.stringInput(templated.apply(e.getValue()), Optional.ofNullable(e.getDefaultValue()).map(DefaultValue::getContent).map(templated).orElse(null), false);
+            case SetupInput e -> Optional.ofNullable(e.getSetup()).map(Setup::getContent).map(templated).orElse("");
             default -> throw new IllegalStateException("Unexpected value: " + promptType);
         };
     }

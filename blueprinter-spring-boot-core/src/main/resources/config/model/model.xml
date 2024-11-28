@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="monModel" xsi:noNamespaceSchemaLocation="model.xsd">
     <!--
+
+    <setup>Used to prepare the velocity context with any setup you want</setup>
+
     A property is a value that will be used in the model. It can be used in the directives and in the prompts.
     Properties are optional.
     <properties>

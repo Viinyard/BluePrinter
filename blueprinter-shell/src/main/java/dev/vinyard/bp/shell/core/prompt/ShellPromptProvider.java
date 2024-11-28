@@ -4,6 +4,7 @@ import dev.vinyard.bp.core.model.entities.*;
 import dev.vinyard.bp.core.prompt.PromptProvider;
 import dev.vinyard.bp.core.prompt.PromptSelectorItem;
 import dev.vinyard.bp.core.utils.VelocityUtils;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.velocity.VelocityContext;
 import org.springframework.shell.component.MultiItemSelector;
 import org.springframework.shell.component.SingleItemSelector;
@@ -18,6 +19,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Component
+@Slf4j
 public class ShellPromptProvider extends AbstractShellComponent implements PromptProvider {
 
     private static <T> SelectorItem<T> toSelectorItem(PromptSelectorItem<T> promptSelectorItem) {
@@ -38,6 +40,7 @@ public class ShellPromptProvider extends AbstractShellComponent implements Promp
                     this.singleSelect(e.getValueList().stream().map(v -> PromptSelectorItem.of(templated.apply(v.getKey()), templated.apply(v.getContent()), v.isEnabled(), v.isSelected())).toList(), e.getValue());
             case StringInput e ->
                     this.stringInput(templated.apply(e.getValue()), Optional.ofNullable(e.getDefaultValue()).map(DefaultValue::getContent).map(templated).orElse(""), e.isMasked());
+            case SetupInput e -> Optional.ofNullable(e.getSetup()).map(Setup::getContent).map(templated).orElse("");
             default -> throw new IllegalStateException("Unexpected value: " + promptType);
         };
     }

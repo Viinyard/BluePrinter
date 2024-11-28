@@ -61,14 +61,19 @@ public class GenerationManager {
 
         Model model = this.modelManager.loadModel(velocityContext, modelName);
 
+        Function<String, String> templated = s -> VelocityUtils.processTemplate(velocityContext, s);
+
+        Optional.of(model).map(Model::getSetup).map(Setup::getContent).ifPresent(templated::apply);
+
         Optional.of(model).map(Model::getProperties).map(Properties::getPropertyList).orElseGet(Collections::emptyList).stream()
                 .peek(p -> log.debug("Put property on velocity context {} : {}", p.getKey(), p.getValue()))
-                .forEach(p -> velocityContext.put(p.getKey(), p.getValue()));
+                .forEach(p -> velocityContext.put(p.getKey(), templated.apply(p.getValue())));
 
         Stream.of(
                 Optional.of(model).map(Model::getPrompts).map(Prompts::getMultiSelectList).orElseGet(Collections::emptyList),
                 Optional.of(model).map(Model::getPrompts).map(Prompts::getMonoSelectList).orElseGet(Collections::emptyList),
-                Optional.of(model).map(Model::getPrompts).map(Prompts::getStringInputList).orElseGet(Collections::emptyList)
+                Optional.of(model).map(Model::getPrompts).map(Prompts::getStringInputList).orElseGet(Collections::emptyList),
+                Optional.of(model).map(Model::getPrompts).map(Prompts::getSetupInputList).orElseGet(Collections::emptyList)
         ).flatMap(List::stream).map(PromptType.class::cast).sorted().forEach(s -> {
             Object value = this.promptProvider.prompt(s, velocityContext);
             log.info("Put prompt on velocity context {} : {}", s.getValue(), value);

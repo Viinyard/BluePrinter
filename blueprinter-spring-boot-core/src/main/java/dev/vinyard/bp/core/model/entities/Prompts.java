@@ -20,4 +20,7 @@ public class Prompts {
     @XmlElement(name = "stringInput")
     private List<StringInput> stringInputList;
 
+    @XmlElement(name = "setupInput")
+    private List<SetupInput> setupInputList;
+
 }

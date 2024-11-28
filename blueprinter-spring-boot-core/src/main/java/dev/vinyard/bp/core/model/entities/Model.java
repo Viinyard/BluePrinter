@@ -11,6 +11,9 @@ public class Model {
     @XmlAttribute
     private String name;
 
+    @XmlAttribute
+    private Setup setup;
+
     @XmlElement
     private Properties properties;
 
