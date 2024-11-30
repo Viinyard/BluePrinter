@@ -37,7 +37,7 @@ public class ShellPromptProvider extends AbstractShellComponent implements Promp
             case MultiSelect e ->
                     this.multiSelector(e.getValueList().stream().map(v -> PromptSelectorItem.of(templated.apply(v.getKey()), templated.apply(v.getContent()), v.isEnabled(), v.isSelected())).toList(), e.getValue());
             case MonoSelect e ->
-                    this.singleSelect(e.getValueList().stream().map(v -> PromptSelectorItem.of(templated.apply(v.getKey()), templated.apply(v.getContent()), v.isEnabled(), v.isSelected())).toList(), e.getValue());
+                    this.singleSelect(e.getValueList().stream().map(v -> PromptSelectorItem.of(templated.apply(v.getKey()), templated.apply(v.getContent()))).toList(), e.getValue());
             case StringInput e ->
                     this.stringInput(templated.apply(e.getValue()), Optional.ofNullable(e.getDefaultValue()).map(DefaultValue::getContent).map(templated).orElse(""), e.isMasked());
             case SetupInput e -> Optional.ofNullable(e.getSetup()).map(Setup::getContent).map(templated).orElse("");

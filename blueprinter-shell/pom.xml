@@ -4,7 +4,7 @@
     <parent>
         <groupId>dev.vinyard.bp</groupId>
         <artifactId>blueprinter</artifactId>
-        <version>1.8.0</version>
+        <version>1.9.0</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
@@ -12,7 +12,7 @@
     <artifactId>blueprinter-shell</artifactId>
     <name>blueprinter-shell</name>
     <packaging>jar</packaging>
-    <version>1.8.0</version>
+    <version>1.9.0</version>
 
     <dependencyManagement>
         <dependencies>

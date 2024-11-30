@@ -177,9 +177,7 @@ public class ModelManager {
             velocityContext.put(property.getKey(), value);
         });
 
-        String configuration = VelocityUtils.processTemplate(velocityContext, xmlFile);
-
-        return loadConfigurationFile(configuration);
+        return loadConfigurationFile(xmlFile);
     }
 
     private Model loadConfigurationFile(File xmlFile) throws BluePrinterException {
