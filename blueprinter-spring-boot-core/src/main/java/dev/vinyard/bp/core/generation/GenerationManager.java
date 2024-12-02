@@ -102,6 +102,10 @@ public class GenerationManager {
         Function<String, String> templated = s -> VelocityUtils.processTemplate(velocityContext, s);
         File template = new File(environmentManager.getTemplateDirectory(), Optional.of(directive).map(Directive::getTemplate).map(templated).map(String::trim).orElse(""));
         File file = new File(environmentManager.getHomeDirectory(), Optional.of(directive).map(Directive::getValue).map(templated).map(String::trim).orElse(""));
-        VelocityUtils.processTemplate(velocityContext, template, file);
+
+        if (directive.getOverride() || !file.exists())
+            VelocityUtils.processTemplate(velocityContext, template, file);
+        else
+            log.info("Directive {} not processed because file {} already exists.", directive.getName(), file.getAbsolutePath());
     }
 }

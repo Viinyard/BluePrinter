@@ -16,6 +16,9 @@ public class Directive {
     @XmlAttribute
     private String template;
 
+    @XmlAttribute
+    private Boolean override = false;
+
     @XmlValue
     private String value;
 
