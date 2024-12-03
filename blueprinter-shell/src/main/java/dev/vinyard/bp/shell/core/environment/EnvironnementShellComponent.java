@@ -35,21 +35,17 @@ public class EnvironnementShellComponent extends AbstractShellComponent {
      * Display all environnement properties in a formatted way :
      * <ul>
      *     <li>User environnement</li>
-     *     <ul>
-     *         <li>Home directory</li>
-     *         <li>Working directory</li>
-     *     </ul>
+     *
+     *         <li>- Home directory</li>
+     *         <li>- Working directory</li>
      *     <li>Java environnement</li>
-     *     <ul>
-     *         <li>Java version</li>
-     *         <li>Jar File</li>
-     *         <li>Jar directory</li>
-     *     </ul>
+     *         <li>- Java version</li>
+     *         <li>- Jar File</li>
+     *         <li>- Jar directory</li>
      *     <li>System environnement</li>
-     *     <ul>
-     *         <li>Operating system</li>
-     *     </ul>
+     *         <li>-Operating system</li>
      * </ul>
+     *
      * @return formatted string
      */
     @ShellMethod(key = "environnement", value = "Display environnement", group = "EnvironnementManager")
@@ -74,6 +70,7 @@ public class EnvironnementShellComponent extends AbstractShellComponent {
      * Prompt user to set home directory
      * <p>The user is asked to select a valid directory to select or replace his home directory.</p>
      * <p>Home directory is the directory where your workspace is generated.</p>
+     *
      * @see EnvironnementShellComponent#init() to initialize the environment after setting the home directory
      */
     @ShellMethod(key = "home", value = "Set home directory", group = "EnvironnementManager")
@@ -106,6 +103,7 @@ public class EnvironnementShellComponent extends AbstractShellComponent {
 
     /**
      * Check if the home directory is set to get the availability of the {@code init} command
+     *
      * @return {@link Availability#available()} if the home directory is set, {@link Availability#unavailable(String)} otherwise
      */
     public Availability environmentAvailability() {

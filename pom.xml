@@ -6,8 +6,32 @@
     <artifactId>blueprinter</artifactId>
     <version>1.11.0</version>
     <packaging>pom</packaging>
-    <name>BluePrinter</name>
-    <url>http://maven.apache.org</url>
+
+    <name>${project.groupId}:${project.artifactId}</name>
+    <description>BluePrinter is a client to generate files from a context using velocity templates.</description>
+    <url>https://github.com/Viinyard/blueprinter</url>
+
+    <licenses>
+        <license>
+            <name>The Apache Software Licence, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Vinyard</name>
+            <email>contact@vinyard.dev</email>
+            <organization>Vinyard Software</organization>
+            <organizationUrl>https://vinyard.dev</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/Viinyard/blueprinter.git</connection>
+        <developerConnection>scm:git:ssh://github.com:Viinyard/blueprinter.git</developerConnection>
+        <url>http://github.com/Viinyard/blueprinter/tree/master</url>
+    </scm>
 
     <modules>
         <module>blueprinter-spring-boot-core</module>
@@ -58,7 +82,6 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
     <build>
         <pluginManagement>
             <plugins>
@@ -76,21 +99,73 @@
         </pluginManagement>
     </build>
 
-    <repositories>
-        <repository>
-            <id>github</id>
-            <url>https://maven.pkg.github.com/viinyard/maven-repo</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
+    <profiles>
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>3.3.1</version>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
 
-    <distributionManagement>
-        <repository>
-            <id>github</id>
-            <name>GitHub Viinyard Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/viinyard/maven-repo</url>
-        </repository>
-    </distributionManagement>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>3.11.1</version>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>3.2.7</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                                <configuration>
+                                    <gpgArguments>
+                                        <arg>--pinentry-mode</arg>
+                                        <arg>loopback</arg>
+                                    </gpgArguments>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.sonatype.central</groupId>
+                        <artifactId>central-publishing-maven-plugin</artifactId>
+                        <version>0.6.0</version>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <publishingServerId>central</publishingServerId>
+                            <tokenAuth>true</tokenAuth>
+                            <autoPublish>true</autoPublish>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
