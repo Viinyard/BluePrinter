@@ -11,6 +11,7 @@
       <set>
         <option value="$PROJECT_DIR$/blue-printer-maven-plugin/pom.xml" />
         <option value="$PROJECT_DIR$/blueprinter-plugins/pom.xml" />
+        <option value="$PROJECT_DIR$/blueprinter-runner/pom.xml" />
         <option value="$PROJECT_DIR$/untitled/pom.xml" />
         <option value="$PROJECT_DIR$/velocity-blueprint-plugins/advent-of-code/pom.xml" />
         <option value="$PROJECT_DIR$/velocity-blueprint-plugins/plugins-vb-environment/pom.xml" />

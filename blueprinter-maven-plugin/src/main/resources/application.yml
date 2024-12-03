@@ -3,3 +3,4 @@ spring:
     name: blueprinter-cli
   main:
     banner-mode: off
+

@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>dev.vinyard.bp</groupId>
     <artifactId>blueprinter</artifactId>
-    <version>1.10.0</version>
+    <version>1.11.0</version>
     <packaging>pom</packaging>
     <name>BluePrinter</name>
     <url>http://maven.apache.org</url>
@@ -13,9 +13,9 @@
         <module>blueprinter-spring-boot-core</module>
         <module>blueprinter-shell</module>
         <module>blueprinter-plugins-api</module>
-        <module>blueprinter-runner</module>
         <module>blueprinter-spring-boot-autoconfigure</module>
         <module>blueprinter-spring-boot-starter</module>
+        <module>blueprinter-maven-plugin</module>
     </modules>
 
     <properties>
