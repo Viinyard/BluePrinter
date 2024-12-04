@@ -2,17 +2,17 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <parent>
-        <groupId>dev.vinyard.bp</groupId>
+        <groupId>dev.vinyard.blueprinter</groupId>
         <artifactId>blueprinter</artifactId>
-        <version>1.11.0</version>
+        <version>2.0.0</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>dev.vinyard.bp.shell</groupId>
+    <groupId>dev.vinyard.blueprinter.shell</groupId>
     <artifactId>blueprinter-shell</artifactId>
     <name>blueprinter-shell</name>
     <packaging>jar</packaging>
-    <version>1.11.0</version>
+    <version>2.0.0</version>
 
     <dependencyManagement>
         <dependencies>
@@ -116,7 +116,7 @@
         </dependency>
 
         <dependency>
-            <groupId>dev.vinyard.bp</groupId>
+            <groupId>dev.vinyard.blueprinter.starter</groupId>
             <artifactId>blueprinter-spring-boot-starter</artifactId>
             <version>${project.version}</version>
         </dependency>

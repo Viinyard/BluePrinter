@@ -101,7 +101,7 @@ Or you can use the BluePrinter API to integrate it with your applications and ex
 1. Add the BluePrinter dependency to your `pom.xml` file:
     ```xml
     <dependency>
-        <groupId>dev.vinyard.bp.runner</groupId>
+        <groupId>dev.vinyard.blueprinter.runner</groupId>
         <artifactId>blue-printer-runner</artifactId>
         <version>1.2.0</version>
     </dependency>
